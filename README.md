@@ -1,17 +1,13 @@
-<p align="center">
-  <pre>
-   ____            _                      _       _
-  / ___|__ _ _ __ | |__   _____  ___   _| | __ _| |_ ___
- | |   / _` | '_ \| '_ \ / _ \ \/ / | | | |/ _` | __/ _ \
- | |__| (_| | |  | | |_) | (_) >  <| |_| | | (_| | ||  __/
-  \____\__,_|_|  |_|_.__/ \___/_/\_\\__, |_|\__,_|\__\___|
-                                    |___/
-  </pre>
-</p>
+<div align="center">
+  
+# Carboxylate - Windows Post-Exploitation Toolkit
 
-<h3 align="center">Windows Post-Exploitation Toolkit</h3>
+<img src="https://github.com/user-attachments/assets/6cb2479d-2906-4694-a346-8a00f270b545" width="600"/>
+
+</div>
 
 ---
+
 
 ## About
 
@@ -24,6 +20,10 @@
 | LSASS Dumper | `dumplsass` | Dumps LSASS process memory to disk for offline credential extraction. Enables `SeDebugPrivilege` and locates the LSASS PID automatically. |
 | SAM Hash Dump | `dumpsam` | Exports the SAM and SYSTEM registry hives to disk. Hashes can be extracted offline with `secretsdump.py` or `samdump2`. |
 | Token Impersonation | `impersonate` | Enumerates running processes with their owner (`DOMAIN\User`), lets you pick a PID, duplicates its token, and spawns `cmd.exe` under that identity. |
+
+## Demo
+
+You can lookup this simple demo here at [any.run](https://app.any.run/tasks/5ebd341a-38c7-4d8e-ac8a-13d88bfd5140)
 
 ## Quick Start
 
@@ -148,6 +148,7 @@ Carboxylate-Rust/
 3. Opens `HKLM\SAM` with `RegOpenKeyExW` and saves to `sam.save` via `RegSaveKeyW`
 4. Opens `HKLM\SYSTEM` and saves to `system.save` (contains boot key for decryption)
 5. Output files can be parsed offline:
+
    ```
    secretsdump.py -sam sam.save -system system.save LOCAL
    samdump2 system.save sam.save
