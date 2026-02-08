@@ -1,0 +1,31 @@
+# Rust build output
+/target/
+**/*.rs.bk
+
+# Cargo lock (keep for binaries, ignore for libraries)
+# Comment this out if you're building an application
+# Cargo.lock
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# ANY.RUN / analysis artifacts (optional)
+*.dump
+*.dmp
+*.bin
+

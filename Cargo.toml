@@ -1,0 +1,23 @@
+[package]
+name = "carboxylate"
+version = "0.1.0"
+edition = "2021"
+description = "Windows Post-Exploitation Toolkit"
+
+[target.'cfg(windows)'.dependencies.winapi]
+# Use a cached modern winapi to allow offline cross-compiles in restricted environments.
+version = "0.3.9"
+features = [
+  "errhandlingapi",
+  "fileapi",
+  "handleapi",
+  "dbghelp",
+  "minwindef",
+  "processthreadsapi",
+  "securitybaseapi",
+  "tlhelp32",
+  "winbase",
+  "winerror",
+  "winnt",
+  "winreg",
+]
